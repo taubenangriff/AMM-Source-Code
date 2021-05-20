@@ -152,6 +152,7 @@
       <DependentUpon>ProfileImportDuplicateDialog.xaml</DependentUpon>
     </Compile>
     <Compile Include="Extensions\Extensions.cs" />
+    <Compile Include="Helpers\Enums\EnumBindingExtension.cs" />
     <Compile Include="Helpers\Enums\HelperEnums.cs" />
     <Compile Include="Helpers\GameDirectoryWatcher.cs" />
     <Compile Include="Helpers\LanguageManager.cs" />

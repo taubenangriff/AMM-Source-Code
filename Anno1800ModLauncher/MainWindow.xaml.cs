@@ -69,28 +69,7 @@ namespace Anno1800ModLauncher
         {
             InitializeComponent();
             this.DataContext = this; 
-
             SettingsManager = new SettingsManager();
-
-            //set language to the one that is saved as default in the application properties
-
-            //at first start, set the language to the system language
-            //by default, the apps language is -1
-            if (Properties.Settings.Default.Language < 0)
-            {
-                var lang = CultureInfo.InstalledUICulture.Name;
-                if (lang.StartsWith("en"))
-                {
-                    LanguageManager.Instance.SetLanguage(HelperEnums.Language.English);
-                }
-                else if (lang.StartsWith("de"))
-                {
-                    LanguageManager.Instance.SetLanguage(HelperEnums.Language.German);
-                }
-            }
-            else {
-                LanguageManager.Instance.SetLanguage((HelperEnums.Language)Properties.Settings.Default.Language);
-            }
             ThemeManager.Instance.ChangeTheme(Properties.Settings.Default.Theme);
         }
 

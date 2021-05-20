@@ -119,7 +119,11 @@ namespace Anno1800ModLauncher.Helpers.ModInstaller
 
             //in case it doesn't already exists, create the unpack directory.
             if (!Directory.Exists(TmpDirPath)) {
-                Directory.CreateDirectory(TmpDirPath);
+                //make a hidden directory 
+
+                DirectoryInfo di = new DirectoryInfo(TmpDirPath);
+                di.Create();
+                di.Attributes |= FileAttributes.Hidden;
             }
 
             //extract to the temporary directory

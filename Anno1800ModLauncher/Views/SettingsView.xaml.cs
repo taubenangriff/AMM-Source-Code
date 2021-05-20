@@ -82,26 +82,18 @@ namespace Anno1800ModLauncher.Views
         }
 
         public void LanguageSelection_LanguageChanged(object sender, RoutedEventArgs e) {
-            if (LanguageComboBox.SelectedValue != null)
+            if (LanguageComboBox.SelectedItem != null)
             {
-                if (LanguageComboBox.SelectedValue.Equals(LanguageComboBoxItemEnglish))
+                SelectableLanguages SelectedLanguage = (SelectableLanguages)LanguageComboBox.SelectedItem;
+
+                switch (SelectedLanguage)
                 {
-                    LanguageManager.Instance.SetLanguage(HelperEnums.Language.English);
-                }
-                else if (LanguageComboBox.SelectedValue.Equals(LanguageComboBoxItemGerman))
-                {
-                    LanguageManager.Instance.SetLanguage(HelperEnums.Language.German);
-                }
-            }
-            //disallow user to clear the combo box ^^
-            else {
-                if (LanguageManager.Instance.GetLanguage() == HelperEnums.Language.English)
-                {
-                    LanguageComboBox.SelectedValue =(LanguageComboBoxItemEnglish);
-                }
-                else if (LanguageManager.Instance.GetLanguage() == HelperEnums.Language.German)
-                {
-                    LanguageComboBox.SelectedValue = (LanguageComboBoxItemGerman);
+                    case SelectableLanguages.German:
+                        LanguageManager.Instance.SetLanguage(HelperEnums.Language.German);
+                        break;
+                    case SelectableLanguages.English:
+                        LanguageManager.Instance.SetLanguage(HelperEnums.Language.English);
+                        break;
                 }
             }
                 

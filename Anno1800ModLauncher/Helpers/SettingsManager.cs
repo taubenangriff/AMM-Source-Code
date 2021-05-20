@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Anno1800ModLauncher.Helpers.Enums;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -8,6 +9,14 @@ using System.Windows;
 
 namespace Anno1800ModLauncher.Helpers
 {
+    [TypeConverter(typeof(EnumDescriptionConverter))]
+    public enum SelectableLanguages
+    {
+        [Description("English")]
+        English,
+        [Description("Deutsch")]
+        German
+    }
     public class SettingsManager : INotifyPropertyChanged
     {
         public static SettingsManager Instance { get; set; }

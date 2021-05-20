@@ -116,6 +116,9 @@
     <system:String x:Key="DLCS301Text">Speicherstadt</system:String>
     <system:String x:Key="DLCS302Text">Reisezeit</system:String>
     <system:String x:Key="DLCS303Text">Dächer der Stadt</system:String>
+    <system:String x:Key="DLCVehicleSkinsText">Flottendekorpaket</system:String>
+    <system:String x:Key="DLCVibrantCityText">Vibrant City Pack</system:String>
+    <system:String x:Key="DLCPedestrianZoneText">Pedestrian Zone Pack</system:String>
 
     <!-- Mod Installing Dialog -->
     <system:String x:Key="InstallDialogWindowTitleText">Aus Archiv installieren</system:String>

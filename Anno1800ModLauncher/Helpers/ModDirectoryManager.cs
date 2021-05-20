@@ -18,6 +18,7 @@ using Ionic.Zlib;
 using System.Windows;
 using SerializableModinfo;
 using Newtonsoft.Json;
+using System.Windows.Documents;
 
 namespace Anno1800ModLauncher.Helpers
 {
@@ -196,7 +197,7 @@ namespace Anno1800ModLauncher.Helpers
                     res += "\n\n" + i.Metadata.Description.getText();
                 }
                 
-                //Known Issues
+                    //Known Issues
                 if (i.Metadata.KnownIssues != null) {
                     res += "\n\n" + Application.Current.TryFindResource("ReadMeTextKnownIssues") + " ";
                     foreach (Localized KnownIssue in i.Metadata.KnownIssues)
@@ -204,6 +205,8 @@ namespace Anno1800ModLauncher.Helpers
                         res += "\n" + "> " + KnownIssue.getText();
                     }
                 }
+
+                
 
                 //DLC Dependency
                 if (i.Metadata.DLCDependencies != null) 
@@ -278,7 +281,6 @@ namespace Anno1800ModLauncher.Helpers
                             case "CityLife":
                                 DlcDescription += "\n> " + Application.Current.TryFindResource("DLCCityLifeText");
                                 break;
-                            //change those later as soon as we get Season 3 info. 
                             case "Docklands":
                                 DlcDescription += "\n> " + Application.Current.TryFindResource("DLCS301Text");
                                 break;
@@ -287,6 +289,15 @@ namespace Anno1800ModLauncher.Helpers
                                 break;
                             case "Highlife":
                                 DlcDescription += "\n> " + Application.Current.TryFindResource("DLCS303Text");
+                                break;
+                            case "VehicleSkins":
+                                DlcDescription += "\n> " + Application.Current.TryFindResource("DLCVehicleSkinsText");
+                                break;
+                            case "VibrantCity":
+                                DlcDescription += "\n> " + Application.Current.TryFindResource("DLCVibrantCityText");
+                                break;
+                            case "PedestrianZone":
+                                DlcDescription += "\n> " + Application.Current.TryFindResource("DLCPedestrianZoneText");
                                 break;
 
                         }

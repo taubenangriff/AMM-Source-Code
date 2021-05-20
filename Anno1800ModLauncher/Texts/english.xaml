@@ -115,6 +115,9 @@
     <system:String x:Key="DLCS301Text">Docklands</system:String>
     <system:String x:Key="DLCS302Text">Tourist Season</system:String>
     <system:String x:Key="DLCS303Text">the High Life</system:String>
+    <system:String x:Key="DLCVehicleSkinsText">Vehicle Liveries Pack</system:String>
+    <system:String x:Key="DLCVibrantCityText">Vibrant City Pack</system:String>
+    <system:String x:Key="DLCPedestrianZoneText">Pedestrian Zone Pack</system:String>
 
     
     <!-- Mod Installing Dialog -->
