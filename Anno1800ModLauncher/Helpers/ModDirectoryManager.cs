@@ -123,6 +123,8 @@ namespace Anno1800ModLauncher.Helpers
                     Console.WriteLine("Found no mods! You should check out NexusMods for some sweet mods...");
 
                 UpdateModCounts();
+
+                
             }
             else
                 modList = null;
@@ -366,6 +368,52 @@ namespace Anno1800ModLauncher.Helpers
             {
                 return _baseData.Where(o => o.Name.ToLower().Contains(filterText.ToLower()) && o.IsActive == filterStatus).ToObservableCollection();
             }
+        }
+
+        /// <summary>
+        /// checks compability in a given Collection of mods.
+        /// returns a dictionary with Key = Mod and Value = List of installed mods that are incompatible.
+        /// Only Mods with incompabilities are added to the list.
+        /// Only Mods with metadata are supported.
+        /// </summary>
+        /// <param name="Mods"></param>
+        /// <returns></returns>
+        public Dictionary<ModModel, List<ModModel>> CheckCompability() {
+            var IncompabilityInfo = new Dictionary<ModModel, List<ModModel>>(); 
+            //loop through the mod
+            foreach (ModModel Mod in _baseData) 
+            {
+                if (Mod.hasMetadata() && Mod.IsActive) {
+                    List<ModModel> IncompatibleMods = new List<ModModel>();
+                    String[] IncompatibleIDs = Mod.Metadata.IncompatibleIds;
+
+                    if (IncompatibleIDs != null) {
+                        foreach (ModModel Check in _baseData)
+                        {
+                            if (Check != Mod && Check.hasMetadata() && Check.IsActive)
+                            {
+                                try
+                                {
+                                    //check if the mod to be checked is in the incompatible ids of the current mod.
+                                    if (IncompatibleIDs.Any(Check.Metadata.ModID.Contains))
+                                    {
+                                        IncompatibleMods.Add(Check);
+                                    }
+                                }
+                                catch (NullReferenceException e) {
+                                    Console.WriteLine("Mod {0} has metadata without a ModID.", Check.Name);
+                                }
+                            }
+                        }
+                    }
+                    
+                    if (IncompatibleMods.Count() > 0)
+                    {
+                        IncompabilityInfo.Add(Mod, IncompatibleMods);
+                    }
+                }
+            }
+            return IncompabilityInfo; 
         }
         internal void DownloadInstallNewMod(string v)
         {

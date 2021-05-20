@@ -17,6 +17,7 @@
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
     <CefSharpAnyCpuSupport>true</CefSharpAnyCpuSupport>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -27,10 +28,10 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>0</ApplicationRevision>
-    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <ApplicationRevision>4</ApplicationRevision>
+    <ApplicationVersion>1.0.0.4</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -111,10 +112,22 @@
     <SignAssembly>false</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyOriginatorKeyFile>anno1800modlaunchercert.pfx</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>Anno1800ModLauncher_TemporaryKey.pfx</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>FBCC607C1EE281419B09806B199ED306DAA74EDB</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>Anno1800ModLauncher_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.VisualBasic" />
@@ -148,6 +161,9 @@
     <Compile Include="CustomDialogs\ModInstallationDialog.xaml.cs">
       <DependentUpon>ModInstallationDialog.xaml</DependentUpon>
     </Compile>
+    <Compile Include="CustomDialogs\CompabilityResults.xaml.cs">
+      <DependentUpon>CompabilityResults.xaml</DependentUpon>
+    </Compile>
     <Compile Include="CustomDialogs\ProfileImportDuplicateDialog.xaml.cs">
       <DependentUpon>ProfileImportDuplicateDialog.xaml</DependentUpon>
     </Compile>
@@ -155,6 +171,7 @@
     <Compile Include="Helpers\Enums\EnumBindingExtension.cs" />
     <Compile Include="Helpers\Enums\HelperEnums.cs" />
     <Compile Include="Helpers\GameDirectoryWatcher.cs" />
+    <Compile Include="Helpers\InstallationChecker.cs" />
     <Compile Include="Helpers\LanguageManager.cs" />
     <Compile Include="Helpers\ModDirectoryManager.cs" />
     <Compile Include="Helpers\ModInstaller\ModInstallationManager.cs" />
@@ -192,6 +209,10 @@
     <Page Include="CustomDialogs\ModInstallationDialog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CustomDialogs\CompabilityResults.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="CustomDialogs\ProfileImportDuplicateDialog.xaml">
       <SubType>Designer</SubType>
@@ -249,6 +270,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Anno1800ModLauncher_TemporaryKey.pfx" />
     <None Include="Properties\Resources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

@@ -339,6 +339,21 @@ namespace Anno1800ModLauncher.Views
                 ProcessProfileInstallationRequest(fileList);
         }
 
+        private void ButtonCompability_Click(object sender, RoutedEventArgs e) {
+            Console.WriteLine("Compability Check initiated");
+            //Check Compability
+            var incompatible = ModDirectoryManager.Instance.CheckCompability();
+
+
+            foreach (KeyValuePair<ModModel, List<ModModel>> value in incompatible)
+            {
+                Console.WriteLine(value.Key.Name + " is incompatible to " + value.Value.ToArray()[0]);
+            }
+
+            var dialog = new CompabilityResults(incompatible);
+            dialog.ShowDialog();
+        }
+
         private void ProcessProfileInstallationRequest(string[] fileNames)
         {
             if (fileNames.Count() > 0)

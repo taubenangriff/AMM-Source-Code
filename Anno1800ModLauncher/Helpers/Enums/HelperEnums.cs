@@ -7,8 +7,6 @@ using System.Windows;
 
 namespace Anno1800ModLauncher.Helpers.Enums
 {
-    
-
     public static class HelperEnums
     {
         public enum DetectionState

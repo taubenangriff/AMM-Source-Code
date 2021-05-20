@@ -217,8 +217,8 @@
 				HorizontalAlignment="Stretch"
 				SnapsToDevicePixels="True" />
                         <Expander Visibility="Collapsed"  IsExpanded="True"
-				HorizontalAlignment="Stretch"
-				Header="{DynamicResource ModsViewNexusTitleText}"  Foreground="{DynamicResource PrimaryHueLightForegroundBrush}" Background ="{DynamicResource PrimaryHueBackgroundBrush}">
+				            HorizontalAlignment="Stretch"
+				            Header="{DynamicResource ModsViewNexusTitleText}"  Foreground="{DynamicResource PrimaryHueLightForegroundBrush}" Background ="{DynamicResource PrimaryHueBackgroundBrush}">
                             <StackPanel Orientation="Vertical" Margin="5,5,5,15">
                                 <DockPanel VerticalAlignment="Center" LastChildFill="True">
                                     <Button x:Name="InstalNexusButton" MinWidth="181" DockPanel.Dock="Right" Opacity="1"  HorizontalContentAlignment="Center" Click="InstallNexus_Click">
@@ -295,13 +295,7 @@
                                 </DockPanel>
                             </StackPanel>
                         </Expander>
-                    </StackPanel>
-                </materialDesign:Card>
-                <Label Content="Optional:"  Foreground="{DynamicResource PrimaryHueLightForegroundBrush}"  VerticalAlignment="Bottom" FontSize="16" HorizontalAlignment="Left" Grid.Row="8" Grid.Column="4"/>
-                <materialDesign:Card Grid.Column="4" Grid.Row="9"
-								 Grid.ColumnSpan="3" Grid.RowSpan="3"
-								 Margin="0,3,0,0" Background="Transparent">
-                    <StackPanel>
+                        <Label Content="Optional:"  Foreground="{DynamicResource PrimaryHueLightForegroundBrush}"  VerticalAlignment="Bottom" FontSize="16" HorizontalAlignment="Left" Grid.Row="5" Grid.Column="4"/>
                         <Expander IsExpanded="True" Padding="3"
 				            HorizontalAlignment="Stretch"
 				            Header="{DynamicResource ModsViewImportProfileTitleText}" Foreground="{DynamicResource PrimaryHueLightForegroundBrush}" Background ="{DynamicResource PrimaryHueBackgroundBrush}">
@@ -320,32 +314,38 @@
                                                 DockPanel.Dock="Right" Margin="5,0,0,0" Text="{DynamicResource HomeViewImportButtonText}"/>
                                         </DockPanel>
                                     </Button>
-                                    <!--<Button x:Name="SearchProfileButton" 
-                                            Margin="5,0,0,0" 
-                                            MinWidth="35" 
-                                            DockPanel.Dock="Left" 
-                                            ToolTip="{DynamicResource HomeViewTooltipInstallFromLocal}"
-                                            Opacity="1"  
-                                            HorizontalContentAlignment="Center" 
-                                            Click="SearchProfile_Click" Padding="0">
-                                        <DockPanel>
-                                            <materialDesign:PackIcon
-                                                Kind="Search"
-                                                Height="24"
-                                                Width="24" 
-                                                DockPanel.Dock="Left"/>
-                                        </DockPanel>
-                                    </Button>
-                                    <TextBox Padding="0" Margin="5,5,5,0"
-                                      materialDesign:HintAssist.Hint="{DynamicResource ModsViewTypeHereHintText}"
-                                      materialDesign:HintAssist.Foreground="{DynamicResource PrimaryHueLightForegroundBrush}"
-                                      materialDesign:HintAssist.HelperText="{DynamicResource HomeViewHintAssistLocalFile}"
-                                      VerticalAlignment="Center"
-                                      materialDesign:TextFieldAssist.HasClearButton="True" Foreground="{DynamicResource PrimaryHueLightForegroundBrush}" FontSize="13" CaretBrush="#FFE4E4E4">
-                                    </TextBox>-->
                                 </DockPanel>
                             </StackPanel>
                         </Expander>
+                        <Expander IsExpanded="True" Padding="3"
+				            HorizontalAlignment="Stretch"
+				            Header="{DynamicResource HomeViewCompabilityCheckText}" Foreground="{DynamicResource PrimaryHueLightForegroundBrush}" Background ="{DynamicResource PrimaryHueBackgroundBrush}">
+                            <StackPanel Orientation="Vertical" Margin="0,0,0,15">
+                                <DockPanel VerticalAlignment="Center" LastChildFill="True">
+                                    <Button x:Name="CheckCompabilityButton" MinWidth="181" DockPanel.Dock="Right" Opacity="1"  HorizontalContentAlignment="Center" Click="ButtonCompability_Click">
+                                        <DockPanel>
+                                            <materialDesign:PackIcon
+                                                Kind="Import"
+                                                Height="24"
+                                                Width="24" 
+                                                DockPanel.Dock="Left"/>
+                                            <TextBlock 
+                                                VerticalAlignment="Center" 
+                                                HorizontalAlignment="Right"
+                                                DockPanel.Dock="Right" Margin="5,0,0,0" Text="{DynamicResource HomeViewRunCompabilityText}"/>
+                                        </DockPanel>
+                                    </Button>
+                                </DockPanel>
+                            </StackPanel>
+                        </Expander>
+                    </StackPanel>
+                </materialDesign:Card>
+                
+                <materialDesign:Card Grid.Column="4" Grid.Row="6"
+								 Grid.ColumnSpan="3" Grid.RowSpan="2"
+								 Margin="0,3,0,0" Background="Transparent">
+                    <StackPanel>
+                        
                     </StackPanel>
                 </materialDesign:Card>
             </Grid>

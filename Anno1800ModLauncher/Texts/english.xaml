@@ -36,6 +36,9 @@
     <system:String x:Key="HomeViewTooltipInstallText">Install using the built-in mod browser.</system:String>
     <system:String x:Key="HomeViewSourceText">Source:</system:String>
     <system:String x:Key="HomeViewOptionalText">Optional:</system:String>
+    <system:String x:Key="HomeViewCompabilityCheckText">Compability</system:String>
+    <system:String x:Key="HomeViewRunCompabilityText">Run Compability Check</system:String>
+    <system:String x:Key="HomeViewIncompatibleText">Incompatible to: </system:String>
 
     <!-- About View -->
     <system:String x:Key="AboutButtonText">About</system:String>
